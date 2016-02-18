@@ -28,16 +28,20 @@ public class tests {
         boolean created = publisher.createWorkspace("myWorkspace1");
         if(created)
             System.out.println("created\\n");
+        else
+            System.out.println("not created");
 
         boolean ok = publisher.publishDBLayer("myWorkspace1", "pg_kids", "easia_gaul_0_aggr", "EPSG:4326", "default_polygon");
         if(ok)
             System.out.println("ok");
         else
-            System.out.printf("not ok");
+            System.out.println("not ok");
 
         boolean exists = reader.existsDatastore("myWorkspace", "myStore");
         if(exists)
-            System.out.printf("exists");
+            System.out.println("exists");
+        else
+            System.out.println("not exists");
 
 
     }
