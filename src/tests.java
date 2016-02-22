@@ -3,6 +3,7 @@ import it.geosolutions.geoserver.rest.GeoServerRESTReader;
 import it.geosolutions.geoserver.rest.decoder.RESTCoverage;
 import it.geosolutions.geoserver.rest.decoder.RESTDataStore;
 import it.geosolutions.geoserver.rest.decoder.RESTLayer;
+import it.geosolutions.geoserver.rest.decoder.RESTResource;
 import it.geosolutions.geoserver.rest.encoder.datastore.GSDirectoryOfShapefilesDatastoreEncoder;
 import it.geosolutions.geoserver.rest.manager.GeoServerRESTStoreManager;
 
@@ -18,7 +19,8 @@ import java.util.List;
 public class tests {
 
     public static void main(String[] args) throws MalformedURLException {
-        String RESTURL  = "http://localhost:8180/geoserver";
+        //String RESTURL  = "http://localhost:8180/geoserver";
+        String RESTURL  = "http://192.168.1.80:8180/geoserver";
         String RESTUSER = "admin";
         String RESTPW   = "geoserver";
         String workSpaceName = "myWorkspace1";
@@ -30,14 +32,13 @@ public class tests {
             List<String> nsn = reader.getNamespaceNames();
             for(String tmpStr : nsn)
                 System.out.println(tmpStr);
-            RESTLayer oraReg = reader.getLayer("OT", "REGIONS2010");
-            String strToLoad = oraReg.getResourceUrl();
-            RESTLayer layerTmp = oraReg.get
-            reader.getResource()
+            RESTLayer layerTmp = reader.getLayer("ForOracleWS", "REGIONS2010");
+            //String strToLoad = layerTmp.getResourceUrl();
+            RESTResource oraResource = reader.getResource(layerTmp);
+            System.out.println("Title : " + oraResource.getTitle());
 
             //RESTCoverage oraCover = reader.getCoverage("OT" );
             //System.out.println(oraCover.toString());
-
         }
 
         GeoServerRESTPublisher publisher = new GeoServerRESTPublisher(RESTURL, RESTUSER, RESTPW);
