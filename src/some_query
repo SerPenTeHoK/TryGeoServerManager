@@ -17,3 +17,158 @@
       <Size><Width>550</Width><Height>150</Height></Size>
    </Output>
 </ogc:GetMap>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ogc:GetMap xmlns:ogc="http://www.opengis.net/ows"
+            xmlns:gml="http://www.opengis.net/gml"
+   version="1.1.1" service="WMS">
+   <StyledLayerDescriptor version="1.0.0">
+      <NamedLayer>
+        <Name>ForOracleWS:REGIONS2010</Name>
+        <NamedStyle><Name>generic</Name></NamedStyle>
+      </NamedLayer>
+     <UserLayer>
+      <Name>Inline</Name>
+      <InlineFeature>
+        <FeatureCollection>
+          <featureMember>
+            <BodyPart>
+              <Type>Mouth</Type>
+              <polygonProperty>
+                <gml:Polygon>
+                  <gml:outerBoundaryIs>
+                    <gml:LinearRing>
+                      <gml:coordinates>
+                        -100,44 106,40 56,40
+                         -100,44
+                      </gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:outerBoundaryIs>
+                </gml:Polygon>
+              </polygonProperty>
+            </BodyPart>
+          </featureMember>
+        </FeatureCollection>
+      </InlineFeature>
+
+      <UserStyle>
+        <FeatureTypeStyle>
+          <Rule>
+            <Filter>
+                <PropertyIsEqualTo>
+                  <PropertyName>Type</PropertyName>
+                  <Literal>Mouth</Literal>
+                </PropertyIsEqualTo>
+            </Filter>
+            <PolygonSymbolizer>
+              <Fill>
+                <CssParameter name="fill">
+                  <ogc:Literal>#F00620</ogc:Literal>
+                </CssParameter>
+                <CssParameter name="fill-opacity">
+                  <ogc:Literal>1.0</ogc:Literal>
+                </CssParameter>
+              </Fill>
+              <Stroke>
+                <CssParameter name="stroke">
+                  <ogc:Literal>#FF0000</ogc:Literal>
+                </CssParameter>
+              </Stroke>
+            </PolygonSymbolizer>
+          </Rule>
+        </FeatureTypeStyle>
+      </UserStyle>
+    </UserLayer>
+
+   </StyledLayerDescriptor>
+   <BoundingBox srsName="http://www.opengis.net/gml/srs/epsg.xml#4326">
+      <gml:coord><gml:X>-180</gml:X><gml:Y>41.1</gml:Y></gml:coord>
+      <gml:coord><gml:X>180</gml:X><gml:Y>81.85</gml:Y></gml:coord>
+   </BoundingBox>
+   <Output>
+      <Format>image/png</Format>
+      <Size><Width>550</Width><Height>150</Height></Size>
+   </Output>
+</ogc:GetMap>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ogc:GetMap xmlns:ogc="http://www.opengis.net/ows"
+            xmlns:gml="http://www.opengis.net/gml"
+   version="1.1.1" service="WMS">
+   <StyledLayerDescriptor version="1.0.0">
+      <NamedLayer>
+        <Name>ForOracleWS:REGIONS2010</Name>
+        <NamedStyle><Name>generic</Name></NamedStyle>
+      </NamedLayer>
+     <UserLayer>
+      <Name>Inline</Name>
+      <InlineFeature>
+        <FeatureCollection>
+          <featureMember>
+            <BodyPart>
+              <Type>Mouth</Type>
+              <polygonProperty>
+                <gml:Polygon>
+                  <gml:outerBoundaryIs>
+                    <gml:LinearRing>
+                      <gml:coordinates>
+                        -100,44 106,40 56,40
+                         -100,44
+                      </gml:coordinates>
+                    </gml:LinearRing>
+                  </gml:outerBoundaryIs>
+                </gml:Polygon>
+              </polygonProperty>
+            </BodyPart>
+          </featureMember>
+        </FeatureCollection>
+      </InlineFeature>
+
+      <UserStyle>
+        <FeatureTypeStyle>
+          <Rule>
+            <Filter>
+                <PropertyIsEqualTo>
+                  <PropertyName>Type</PropertyName>
+                  <Literal>Mouth</Literal>
+                </PropertyIsEqualTo>
+            </Filter>
+            <PolygonSymbolizer>
+              <Fill>
+                <CssParameter name="fill">
+                  <ogc:Literal>#F00620</ogc:Literal>
+                </CssParameter>
+                <CssParameter name="fill-opacity">
+                  <ogc:Literal>1.0</ogc:Literal>
+                </CssParameter>
+              </Fill>
+              <Stroke>
+                <CssParameter name="stroke">
+                  <ogc:Literal>#FF0000</ogc:Literal>
+                </CssParameter>
+              </Stroke>
+            </PolygonSymbolizer>
+          </Rule>
+        </FeatureTypeStyle>
+      </UserStyle>
+    </UserLayer>
+   </StyledLayerDescriptor>
+   <BoundingBox srsName="http://www.opengis.net/gml/srs/epsg.xml#4326">
+      <gml:coord><gml:X>-180</gml:X><gml:Y>41.1</gml:Y></gml:coord>
+      <gml:coord><gml:X>180</gml:X><gml:Y>81.85</gml:Y></gml:coord>
+   </BoundingBox>
+
+   <cql_filter>
+     <PropertyIsEqualTo>
+    	<PropertyName>REGION</PropertyName>
+        <Literal>Город Москва</Literal>
+     </PropertyIsEqualTo>
+   </cql_filter>
+
+
+   <Output>
+      <Format>image/png</Format>
+      <Size><Width>550</Width><Height>150</Height></Size>
+   </Output>
+</ogc:GetMap>

@@ -29,6 +29,7 @@ public class tests {
 
         if(reader.existGeoserver()) {
             System.out.println("Есть ");
+
             List<String> nsn = reader.getNamespaceNames();
             for(String tmpStr : nsn)
                 System.out.println(tmpStr);
