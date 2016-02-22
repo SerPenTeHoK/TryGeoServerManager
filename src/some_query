@@ -166,9 +166,61 @@
      </PropertyIsEqualTo>
    </cql_filter>
 
+<CQL_FILTER>
+    <PropertyIsEqualTo>
+        <PropertyName>REGION</PropertyName>
+        <Literal>MOSCOW</Literal>
+    </PropertyIsEqualTo>
+	</CQL_FILTER>
+
+  <ogc:Filter>
+           <ogc:PropertyIsEqualTo>
+            <ogc:PropertyName>REGION</ogc:PropertyName>
+            <ogc:Function name="cql_filter">
+               <ogc:Literal>MOSCOW</ogc:Literal>
+            </ogc:Function>
+            </ogc:PropertyIsEqualTo>
+            </ogc:Filter>
+
+  <ogc:Filter>
+    <ogc:PropertyIsGreaterThan>
+      <ogc:PropertyName>REGION</ogc:PropertyName>
+      <ogc:PropertyName>MOSCOW</ogc:PropertyName>
+    </ogc:PropertyIsGreaterThan>
+  </ogc:Filter>
 
    <Output>
       <Format>image/png</Format>
       <Size><Width>550</Width><Height>150</Height></Size>
    </Output>
 </ogc:GetMap>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ogc:GetMap xmlns:ogc="http://www.opengis.net/ows"
+            xmlns:gml="http://www.opengis.net/gml"
+   version="1.1.1" service="WMS">
+   <StyledLayerDescriptor version="1.0.0">
+      <NamedLayer>
+        <Name>ForOracleWS:REGIONS2010</Name>
+        <NamedStyle><Name>generic</Name>
+        </NamedStyle>
+
+      </NamedLayer>
+   </StyledLayerDescriptor>
+   <ogc:CQL_FILTER  xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml">
+          <ogc:PropertyIsEqualTo>
+            <ogc:PropertyName>REGION</ogc:PropertyName>
+            <ogc:Literal>MOSCOW</ogc:Literal>
+          </ogc:PropertyIsEqualTo>
+   </ogc:CQL_FILTER >
+   <BoundingBox srsName="http://www.opengis.net/gml/srs/epsg.xml#4326">
+      <gml:coord><gml:X>37.036285400390625</gml:X><gml:Y>55.66497802734375</gml:Y></gml:coord>
+      <gml:coord><gml:X>37.563629150390625</gml:X><gml:Y>55.891571044921875</gml:Y></gml:coord>
+   </BoundingBox>
+   <Output>
+      <Format>image/png</Format>
+      <Size><Width>550</Width><Height>150</Height></Size>
+   </Output>
+</ogc:GetMap>
+
